@@ -1,11 +1,11 @@
 import FormForgetPassword from "../components/Fragments/FormForgetPassword";
-import Authlayout from "../components/Layouts/Authlayout";
+import AuthLayout from "../components/Layouts/Authlayout";
 
 const ForgetPasswordPage = () => {
   return (
-    <Authlayout type="forget password">
+    <AuthLayout type="forget password">
       <FormForgetPassword />
-    </Authlayout>
+    </AuthLayout>
   );
 };
 
