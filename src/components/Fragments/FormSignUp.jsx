@@ -28,7 +28,7 @@ const FormSignUp = () => {
           name="password"
         />
       </div>
-      <Button variant="bg-primary w-full text-white" type="submit">
+      <Button variant="bg-primary w-full font-bold text-white bg-emerald-500" type="submit">
         Sign Up
       </Button>
     </form>
