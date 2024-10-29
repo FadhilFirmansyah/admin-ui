@@ -3,11 +3,18 @@ import SignInPage from "./pages/signin";
 import SignUpPage from "./pages/signup";
 import ForgetPasswordPage from "./pages/forgetpassword";
 import ErrorRoute from "./pages/errorRoute";
+import DashboardPage from "./pages/dashboard";
+import BalancePage from "./pages/balance";
 
 const App = () => {
   const myRouter = createBrowserRouter([
     {
       path: "/",
+      element: <DashboardPage/>,
+      errorElement: <ErrorRoute/>
+    },
+    {
+      path: "/login",
       element: <SignInPage/>,
     },
     {
@@ -17,6 +24,10 @@ const App = () => {
     {
       path: "/forget-password",
       element: <ForgetPasswordPage/>,
+    },
+    {
+      path: "/balance",
+      element: <BalancePage/>,
     }
   ]);
 
