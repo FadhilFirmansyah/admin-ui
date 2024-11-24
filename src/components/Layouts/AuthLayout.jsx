@@ -1,35 +1,50 @@
-import { Link } from "react-router-dom"
-import Logo from "../Elements/Logo"
+import { Link } from "react-router-dom";
+import Logo from "../Elements/Logo";
 
 const AuthLayout = (props) => {
-  const { children, type } = props
+  const { children, type } = props;
+
   return (
     <div className="flex justify-center min-h-screen items-center bg-special-mainBg">
+      {/* container start */}
       <div className="w-full max-w-sm">
-
-        <Logo/>
-
-        {type === "forget password" ? (
-          <>
-            <br />
-            <div>
-              <span className="block font-bold text-xl text-center">Forget Password?</span>
-              <span className="block text-center">Enter your email address to get the password reset link</span>
-            </div>
-          </>
-        ): null}
-
-        <div className="mt-16">
-          {children}
+        {/* logo start */}
+        <div className="mb-8">
+          <Logo />
         </div>
-
-        {type === "sign up" || type == "sign in" ?(
+        {/* logo end */}
+        {/* teks start */}
+        <div className="text-center flex justify-center items-center flex-col">
+          {type == "sign up" && (
+            <div className="font-bold text-xl">Create an account</div>
+          )}
+          {type == "forgot" && (
+            <>
+              <div className="font-bold text-xl">Forgot Password?</div>
+              <div className="text-gray-03 text-sm mt-2">
+                Enter your email address to get the
+                <br />
+                password reset link
+              </div>
+            </>
+          )}
+        </div>
+        {/* teks end */}
+        {/* form start */}
+        <div className="mt-8">{children}</div>
+        {/* form end */}
+        {type != "forgot" && (
           <>
+            {/* teks start */}
             <div className="my-9 px-7 flex justify-center text-xs text-gray-03 items-center flex-col static">
               <div className="border border-gray-05 w-full"></div>
-              <div class="px-2 bg-special-mainBg absolute"> or sign in with</div>
+              <div className="px-2 bg-special-mainBg absolute">
+                {" "}
+                or {type} with
+              </div>
             </div>
-
+            {/* teks end */}
+            {/* sign in with google start */}
             <div className="mb-8">
               <button
                 className="h-12 flex items-center justify-center rounded-md text-sm w-full bg-gray-05 text-gray-01"
@@ -38,8 +53,7 @@ const AuthLayout = (props) => {
                 <svg
                   className="h-6 w-6 mr-2"
                   xmlns="http://www.w3.org/2000/svg"
-                  // eslint-disable-next-line react/no-unknown-property
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xmlnsXlink="http://www.w3.org/1999/xlink"
                   width="800px"
                   height="800px"
                   viewBox="-0.5 0 48 48"
@@ -56,9 +70,15 @@ const AuthLayout = (props) => {
                     fillRule="evenodd"
                   >
                     {" "}
-                    <g id="Color-" transform="translate(-401.000000, -860.000000)">
+                    <g
+                      id="Color-"
+                      transform="translate(-401.000000, -860.000000)"
+                    >
                       {" "}
-                      <g id="Google" transform="translate(401.000000, 860.000000)">
+                      <g
+                        id="Google"
+                        transform="translate(401.000000, 860.000000)"
+                      >
                         {" "}
                         <path
                           d="M9.82727273,24 C9.82727273,22.4757333 10.0804318,21.0144 10.5322727,19.6437333 L2.62345455,13.6042667 C1.08206818,16.7338667 0.213636364,20.2602667 0.213636364,24 C0.213636364,27.7365333 1.081,31.2608 2.62025,34.3882667 L10.5247955,28.3370667 C10.0772273,26.9728 9.82727273,25.5168 9.82727273,24"
@@ -95,41 +115,51 @@ const AuthLayout = (props) => {
                 <span>Continue with Google</span>
               </button>
             </div>
+            {/* sign in with google end */}
           </>
-        ): null}
+        )}
 
+        {/* link start */}
         <div className="flex justify-center">
-        {type === "sign up" ? (
+          {type == "sign up" && (
             <>
               <span className="text-sm text-gray-03">
                 Already have an account?&nbsp;
               </span>
-              <Link to="/" className="text-primary text-sm font-bold mb-10">
+              <Link to="/login" className="text-primary text-sm font-bold">
                 Sign In Here
               </Link>
             </>
-          ) : type === "sign in" ? (
-            <>
-              <div className="flex flex-col">
-                <Link to="/register" className="text-primary text-sl font-bold text-emerald-600">
-                  Create an Account
-                </Link>
-                <Link to="/forget-password" className="text-primary text-sl font-bold text-gray-500">
-                  Forgot Password?
-                </Link>
-              </div>
-            </>
-          ) : type == "forget password" ? (
-            <>
-              <Link to="/" className="text-primary text-sm font-bold mt-10">
+          )}
+
+          {type == "sign in" && (
+            <div className="text-center">
+              <Link to="/register" className="text-primary text-sm font-bold">
+                Create an account
+              </Link>
+              <br />
+              <Link
+                to="/forgot-password"
+                className="text-gray-03 text-sm font-bold"
+              >
+                Forgot Password
+              </Link>
+            </div>
+          )}
+
+          {type == "forgot" && (
+            <div className="text-center mt-4">
+              <Link to="/login" className="text-gray-03 text-sm font-bold">
                 Back to Login
               </Link>
-            </>
-          ) : null}
+            </div>
+          )}
         </div>
+        {/* link end */}
       </div>
+      {/* container end */}
     </div>
-  )
-}
+  );
+};
 
-export default AuthLayout
+export default AuthLayout;

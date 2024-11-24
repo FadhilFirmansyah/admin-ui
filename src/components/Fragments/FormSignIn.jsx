@@ -24,8 +24,8 @@ const FormSignIn = () => {
       <div className="mb-3">
         <CheckBox label="Keep me signed in" name="status" />
       </div>
-      <Button variant="bg-primary w-full font-bold text-white bg-emerald-500" type="submit">
-	      Login
+      <Button variant="bg-primary w-full text-white" type="submit">
+        Login
       </Button>
     </form>
   );
