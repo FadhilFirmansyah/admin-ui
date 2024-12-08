@@ -11,7 +11,7 @@ const DashboardPage = () => {
       {/* top content start*/}
       <div className="md:grid md:grid-cols-3 md:gap-x-6">
         <CardBalance/>
-        <Card title="Goals"/>
+        <Card title="Goals" />
         <CardBill/>
         <CardTransaction/>
         <Card variant="md:col-span-2" title="Statistics" />
