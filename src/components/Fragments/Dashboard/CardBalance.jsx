@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import accounts from "../../../data/accounts";
 import Card from "../../Elements/Card";
 import Stepper from "../../Elements/Stepper";
-import OutboundIcon from '@mui/icons-material/Outbound';
+import { Icon } from "../../Elements/Icon";
 
 const CardBalance = () => {
     const balanceCard = accounts.map((account) => (
@@ -37,7 +37,7 @@ const CardBalance = () => {
                             ${account.balance}
                         </span>
                         <div className="bg-white max-w-min rounded-full ps-1 pt-1 ms-4">
-                            <OutboundIcon/>
+                            <Icon.ArrowRightUp/>
                         </div>
                     </div>
                 </div>

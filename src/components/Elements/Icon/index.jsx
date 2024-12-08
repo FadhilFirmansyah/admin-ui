@@ -297,6 +297,13 @@ const HousingIcon = () => (
   </IconWrapper>
 );
 
+const ArrowRightUpIcon = () => (
+  <IconWrapper>
+    <path d="M8.66669 15.3333L15.3334 8.66667" stroke="#299D91" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M8.66669 8.66667H15.3334V15.3333" stroke="#299D91" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </IconWrapper>
+);
+
 export const Icon = {
   Overview: OverviewIcon,
   Balance: BalanceIcon,
@@ -315,5 +322,6 @@ export const Icon = {
   Others: OtherIcon,
   Housing: HousingIcon,
   Food: FoodIcon,
-  Entertainment: EntertainmentIcon
+  Entertainment: EntertainmentIcon,
+  ArrowRightUp: ArrowRightUpIcon
 };
