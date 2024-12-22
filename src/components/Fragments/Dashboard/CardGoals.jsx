@@ -3,6 +3,8 @@ import Stack from '@mui/material/Stack';
 import { Gauge } from '@mui/x-charts/Gauge';
 import Card from '../../Elements/Card';
 import goals from '../../../data/goals';
+import { useContext } from 'react';
+import { ThemeContext } from '../../../context/themeContext';
 
 const CardGoals = () => {
     const goalTarget = goals.finish;

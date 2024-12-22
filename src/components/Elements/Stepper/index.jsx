@@ -6,10 +6,16 @@ import Button from '@mui/material/Button';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 
+import { ThemeContext } from '../../../context/themeContext';
+import { useContext } from 'react';
+
 const Stepper = (props) => {
     const { desc } = props;
 
     const theme = useTheme();
+
+    const {theme: ThemeMode} = useContext(ThemeContext)
+
     const [activeStep, setActiveStep] = useState(0);
 
     const handleNext = () => {
@@ -35,7 +41,7 @@ const Stepper = (props) => {
                     backgroundColor: "darkgrey"
                 },
                 "& .MuiMobileStepper-dotActive": {
-                    backgroundColor: "#299D91"
+                    backgroundColor: ThemeMode.color
                 }
             }}
             nextButton={
