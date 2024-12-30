@@ -37,6 +37,8 @@ const FormSignIn = () => {
       
       setIsLoggedIn(true);
       setName(decoded.name)
+
+      navigate("/");
     } catch (error) {
       if (error.response) {
         setOpen(true)

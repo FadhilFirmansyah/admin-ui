@@ -1,6 +1,6 @@
 import Input from "../Elements/LabeledInput/Input";
 import NotificationsIcon from "@mui/icons-material/Notifications";
-import { ThemeContext } from "@emotion/react";
+import { ThemeContext } from "../../context/themeContext";
 import { AuthContext } from "../../context/authContext";
 import { useContext } from "react";
 
