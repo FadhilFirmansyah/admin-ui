@@ -16,7 +16,7 @@ const Navbar = () => {
   ];
   
   const { theme, setTheme } = useContext(ThemeContext);
-  const {setIsLoggenIn, setName, name} = useContext(AuthContext);
+  const {setIsLoggedIn, setName, name} = useContext(AuthContext);
   const navigate = useNavigate();
 
   const menus = [
